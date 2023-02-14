@@ -23,11 +23,14 @@ public class task_1 {
 
         for (int i = 0; i < dataBaseArr.length; i += 1) {
             String[] arrElem = dataBaseArr[i].replace("\"", " ").split(":");
-            
+
+            //С помощью equals сравниваем ЗНАЧЕНИЕ строк и отлавливаем "null"         
+
             if (!"null".equals(arrElem[1].trim())) {
                 stringBuilder.append(arrElem[0].trim()).append(" = ").append("\"").append(arrElem[1].trim()).append("\"");
-                if (i < dataBaseArr.length - 2)
-                    stringBuilder.append(" and ");
+            }
+            if (i < dataBaseArr.length - 2) {
+                stringBuilder.append(" and ");
             }
         }
         System.out.println(stringBuilder);
